@@ -33,6 +33,9 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Do NOT use `ngClass`, use `class` bindings instead
 - Do NOT use `ngStyle`, use `style` bindings instead
 - When using external templates/styles, use paths relative to the component TS file.
+- Create folders for the components and its related files (e.g., `my-component/my-component.component.ts`, `my-component/my-component.component.html`, `my-component/my-component.component.scss`, `my-component/my-component.component.spec.ts`).
+- If a component is generic (Button, Input, Icon), it must be placed in/sourced from `naologic-ds` and exposed through its public API.
+- Mobile-first design: Ensure components are responsive and work well on various screen sizes, prioritizing mobile usability.
 
 ## State Management
 
@@ -53,3 +56,19 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Design services around a single responsibility
 - Use the `providedIn: 'root'` option for singleton services
 - Use the `inject()` function instead of constructor injection
+
+
+## Data Fetching
+- Use Angular's `HttpClient` for all HTTP requests.
+- Use the models defined in the `models` folder for type safety when handling API responses.
+
+## Testing
+- Use Jasmine and Karma for unit testing
+- Write tests for components, services, and other critical parts of the application
+- Aim for high test coverage, but prioritize meaningful tests over coverage percentage
+- Use Cypress for end-to-end testing to ensure the application works as expected in a real browser environment.
+- Mock external dependencies in unit tests to isolate the code being tested.
+- Use Angular's testing utilities to create test beds and handle asynchronous operations in tests.
+- Follow the Arrange-Act-Assert pattern in tests for clarity and maintainability. 
+- Avoid testing implementation details; focus on testing the public API and behavior of components and services.
+
