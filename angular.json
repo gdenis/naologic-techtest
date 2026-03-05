@@ -58,6 +58,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "projects/naologic-techtest/src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "naologic-techtest:build:production"

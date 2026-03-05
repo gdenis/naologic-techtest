@@ -7,10 +7,18 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
+npm run start:db
+```
+
+```bash
 npm run start:dev
 ```
 
 If you whant to see the changes in the library reflected on the app in real time, you need to run these commands in two separated consoles:
+
+```bash
+npm run start:db
+```
 
 ```bash
 npm run build:ds-watch
