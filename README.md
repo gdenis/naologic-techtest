@@ -52,13 +52,19 @@ ng test
 
 ## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+For end-to-end (e2e) testing, you need both the lib and the project working (npm run build:ds and npm start) and then run:
+
+For interactive Cypress:
 
 ```bash
-ng e2e
+npm run cypress:open
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Or CLI:
+
+```bash
+npm run cypress:run
+```
 
 ## Additional Resources
 
