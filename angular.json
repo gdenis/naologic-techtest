@@ -6,5 +6,97 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "naologic-techtest": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/naologic-techtest",
+      "sourceRoot": "projects/naologic-techtest/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/naologic-techtest/src/main.ts",
+            "tsConfig": "projects/naologic-techtest/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/naologic-techtest/public"
+              }
+            ],
+            "styles": ["projects/naologic-techtest/src/styles.scss"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "naologic-techtest:build:production"
+            },
+            "development": {
+              "buildTarget": "naologic-techtest:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "naologic-ds": {
+      "projectType": "library",
+      "root": "projects/naologic-ds",
+      "sourceRoot": "projects/naologic-ds/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/naologic-ds/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/naologic-ds/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/naologic-ds/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
