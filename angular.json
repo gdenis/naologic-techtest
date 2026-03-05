@@ -30,7 +30,8 @@
                 "input": "projects/naologic-techtest/public"
               }
             ],
-            "styles": ["projects/naologic-techtest/src/styles.scss"]
+            "styles": ["projects/naologic-techtest/src/styles.scss"],
+            "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
             "production": {

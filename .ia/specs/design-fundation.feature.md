@@ -33,7 +33,7 @@ Integration of the **Circular Std** font family, installation of required UI lib
 ### T1: Install Visual Dependencies
 **What:** Install `@ng-select/ng-select`, `@ng-bootstrap/ng-bootstrap`, and `bootstrap` via npm so its compatible with `naologic-ds` and `naologic-techtest`.
 **Files:** `package.json`
-**Verify:** Both packages precent on the package.json 
+**Verify:** Both packages precent on the package.json. Build the library using `npm run build:ds` and the app `npm run build` and get no error messages.
 
 ### T2: Typography & Global Styles Setup
 **What:** Add the Circular Std link to the app's index.html and set global font/bootstrap styles.

@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^21.2.0",
-    "@angular/core": "^21.2.0"
+    "@angular/core": "^21.2.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "@ng-bootstrap/ng-bootstrap": "^20.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

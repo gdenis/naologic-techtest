@@ -33,7 +33,7 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Do NOT use `ngClass`, use `class` bindings instead
 - Do NOT use `ngStyle`, use `style` bindings instead
 - When using external templates/styles, use paths relative to the component TS file.
-- Create folders for the components and its related files (e.g., `my-component/my-component.component.ts`, `my-component/my-component.component.html`, `my-component/my-component.component.scss`, `my-component/my-component.component.spec.ts`).
+- Create folders for the components and its related files (e.g., `my-component/my-component.ts`, `my-component/my-component.html`, `my-component/my-component.scss`, `my-component/my-component.spec.ts`).
 - If a component is generic (Button, Input, Icon), it must be placed in/sourced from `naologic-ds` and exposed through its public API.
 - Mobile-first design: Ensure components are responsive and work well on various screen sizes, prioritizing mobile usability.
 
