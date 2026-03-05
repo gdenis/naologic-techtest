@@ -7,10 +7,14 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-npm run build:ds
+npm run start:dev
 ```
 
-And in another terminal:
+If you whant to see the changes in the library reflected on the app in real time, you need to run these commands in two separated consoles:
+
+```bash
+npm run build:ds-watch
+```
 
 ```bash
 npm start
@@ -52,18 +56,18 @@ ng test
 
 ## Running end-to-end tests
 
-For end-to-end (e2e) testing, you need both the lib and the project working (npm run build:ds and npm start) and then run:
+For end-to-end (e2e) testing, run:
 
 For interactive Cypress:
 
 ```bash
-npm run cypress:open
+npm run test:interactive
 ```
 
 Or CLI:
 
 ```bash
-npm run cypress:run
+npm run test:cli
 ```
 
 ## Additional Resources
