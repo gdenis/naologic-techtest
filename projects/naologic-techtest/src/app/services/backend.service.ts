@@ -5,7 +5,6 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class BackendService {
-  constructor() {}
 
   private http = inject(HttpClient);
 

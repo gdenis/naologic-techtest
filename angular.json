@@ -30,7 +30,10 @@
                 "input": "projects/naologic-techtest/public"
               }
             ],
-            "styles": ["projects/naologic-techtest/src/styles.scss", "node_modules/@ng-select/ng-select/themes/default.theme.css"],
+            "styles": [
+              "projects/naologic-techtest/src/styles.scss",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css"
+            ],
             "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
@@ -107,6 +110,16 @@
               "devServerTarget": "naologic-techtest:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/naologic-techtest/**/*.ts",
+              "projects/naologic-techtest/**/*.html"
+            ],
+            "eslintConfig": "projects/naologic-techtest/eslint.config.js"
+          }
         }
       }
     },
@@ -132,6 +145,13 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/naologic-ds/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/naologic-ds/**/*.ts", "projects/naologic-ds/**/*.html"],
+            "eslintConfig": "projects/naologic-ds/eslint.config.js"
           }
         }
       }
