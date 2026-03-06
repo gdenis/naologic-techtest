@@ -2,3 +2,21 @@
 <ngb-alert [dismissible]="false">
 	<strong>Warning!</strong> Better check yourself, you're not looking too good.
 </ngb-alert>
+
+<h3>Ng-select examples</h3>
+
+<!--Using ng-option and for loop-->
+<ng-select [(ngModel)]="selectedCar" style="width: 50%;">
+    @for (car of cars; track car.id) {
+        <ng-option [value]="car.id">{{car.name}}</ng-option>
+    }
+</ng-select>
+
+<span> Selected car id: {{selectedCar}}</span>
+
+<!--Using items input-->
+<ng-select [items]="cars"
+           bindLabel="name"
+           bindValue="id"
+           [(ngModel)]="selectedCar">
+</ng-select>
