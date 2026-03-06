@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NaologicDs } from 'naologic-ds';
+import { NaologicDs, WorkOrderStatus } from 'naologic-ds';
 import { BackendService } from './services/backend.service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 
@@ -17,5 +17,8 @@ export class App {
   dbService = inject(BackendService);
 
   profile = this.dbService.getProfile();
+
+  // Test import: using WorkOrderStatus type
+  testStatus = signal<WorkOrderStatus>('open');
 
 }
