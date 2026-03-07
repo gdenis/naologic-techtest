@@ -45,27 +45,21 @@ To establish a single source of truth for the application’s data structures an
 **Files:** `projects/naologic-ds/src/lib/models/*.ts`, update `public-api.ts`.  
 **Verify:** Models compile; `npm run build:ds` succeeds. The app imports a model and uses it in a component or service type annotation without TypeScript errors.
 
-### T2: Export models via public API
+### T2: Seed `json-server` with sample data
 
-**What:** Add `export * from './lib/models';` 
-**Files:** `public-api.ts`.  
-**Verify:** `npm run build:ds` still passes; the app can import models using the library path.
-
-### T3: Seed `json-server` with sample data
-
-**What:** Populate `projects/json-db/db.json` with example records matching the new models.  
-**Files:** `projects/json-db/db.json`, plus any seed script.  
-**Verify:** Start `json-server` (`npm run start:json-db` or similar) and GET endpoints return the sample records. The UI can fetch work orders and display them.
+**What:** Populate `projects/json-db/db.json` with example records matching the new models, 5+ work centers, 8+ work orders, All 4 status types, Multiple orders on same work center (non-overlapping).  
+**Files:** `projects/json-db/db.json`.  
+**Verify:** Start `json-server` (`npm run start:json-db` or similar) and GET endpoints return the sample records. 
 
 
-### T4: Create CRUD HTTPClient service 
+### T3: Create CRUD HTTPClient service 
 
-**What:**: Create two CRUD services, one for `WorkCenterDocument`, and the other for Work Order. 
-**Files:** `projects/json-db/db.json`, plus any seed script.  
-**Verify:** Start `json-server` (`npm run start:json-db` or similar) and GET endpoints return the sample records. The UI can fetch work orders and display them.
+**What:**: Create two CRUD services, one for each model at `projects/naologic-ds/src/lib/models/{model}.ts` with its corresponding unit tests. 
+**Files:** `projects/naologic-techtest/src/services/{model}-sevice/{model}.ts`, `projects/naologic-techtest/src/services/{model}-sevice/{model}.spec.ts`.
+**Verify:** Start `json-server` (`npm run start:json-db` or similar) and GET endpoints return the sample records.
 
 
-### T5: Document the workflow
+### T4: Document the workflow
 
 **What:** Update README or add comments explaining how to add a new model and regenerate the seed data.  
 **Files:** `projects/naologic-ds/README.md` or root `README.md`.  
