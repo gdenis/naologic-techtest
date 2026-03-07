@@ -10,7 +10,6 @@
 /// <reference types="@angular/localize" />
 
 
-export * from './lib/components/naologic-ds/naologic-ds';
 export * from './lib/components/timeline-action-button/timeline-action-button';
 export * from './lib/models/work-center.model';
 export * from './lib/models/work-order.model';
