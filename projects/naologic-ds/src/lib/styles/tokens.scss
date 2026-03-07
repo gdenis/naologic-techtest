@@ -1,0 +1,36 @@
+// Design Tokens for Naologic DS
+// Status Colors
+$status-open: #4caf50; // green
+$status-in-progress: #ff9800; // orange
+$status-complete: #2196f3; // blue
+$status-blocked: #f44336; // red
+
+// Semantic Colors
+$primary: #1976d2;
+$danger: #d32f2f;
+$secondary: #757575;
+
+// Typography
+$font-family-default: 'Circular Std';
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing (8px increments)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
