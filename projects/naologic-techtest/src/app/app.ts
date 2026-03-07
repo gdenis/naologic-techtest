@@ -1,24 +1,28 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NaologicDs, WorkOrderStatus } from 'naologic-ds';
-import { BackendService } from './services/backend.service';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { NaologicDs, WorkCenterDocument, WorkOrderStatus } from 'naologic-ds';
+import { JsonPipe } from '@angular/common';
+import { WorkCenterService } from './services/work-center/work-center.service';
+import { WorkOrderService } from './services/work-order/work-order.service';
+import {toSignal} from '@angular/core/rxjs-interop';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NaologicDs, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, NaologicDs, JsonPipe],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('naologic-techtest');
-  dbService = inject(BackendService);
+  workCenterService = inject(WorkCenterService);
+  workOrderService = inject(WorkOrderService);
 
-  profile = this.dbService.getProfile();
 
   // Test import: using WorkOrderStatus type
   testStatus = signal<WorkOrderStatus>('open');
+
+  workCenterList: Signal<WorkCenterDocument[]> = toSignal(this.workCenterService.getAll(), {initialValue: []});
 
 }

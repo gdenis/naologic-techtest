@@ -56,8 +56,7 @@ To establish a single source of truth for the application’s data structures an
 
 **What:**: Create two CRUD services, one for each model at `projects/naologic-ds/src/lib/models/{model}.ts` with its corresponding unit tests. 
 **Files:** `projects/naologic-techtest/src/services/{model}-sevice/{model}.ts`, `projects/naologic-techtest/src/services/{model}-sevice/{model}.spec.ts`.
-**Verify:** Start `json-server` (`npm run start:json-db` or similar) and GET endpoints return the sample records.
-
+**Verify:** Start `json-server` and  test the services, feel free to use `app.ts` to print the result to console. 
 
 ### T4: Document the workflow
 
