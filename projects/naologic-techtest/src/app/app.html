@@ -1,7 +1,11 @@
-<nao-welcome></nao-welcome>
+<nao-timeline-action-button
+  label="Test Button"
+  aria-label="Test aria label"
+  [disabled]="false"
+></nao-timeline-action-button>
 
 <h1>DB Test Profile</h1>
 
-<span>{{workCenterList() | json}}</span>
+<span>{{ workCenterList() | json }}</span>
 
 <router-outlet />

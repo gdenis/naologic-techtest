@@ -1,0 +1,64 @@
+@use 'sass:color';
+@use '../../styles/tokens.scss' as *;
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid transparent;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+
+  // Base styles
+  background-color: $primary;
+  color: white;
+  border-color: $primary;
+
+  // Variant styles
+  &[variant="secondary"] {
+    background-color: transparent;
+    color: $primary;
+    border-color: $primary;
+
+    &:hover:not([disabled]) {
+      background-color: rgba($primary, 0.1);
+    }
+  }
+
+  &[variant="danger"] {
+    background-color: $danger;
+    color: white;
+    border-color: $danger;
+
+    &:hover:not([disabled]) {
+      background-color: color.adjust($danger, $lightness: -10%);
+      border-color: color.adjust($danger, $lightness: -10%);
+    }
+  }
+
+  // Hover states
+  &:hover:not([disabled]) {
+    background-color: color.adjust($primary, $lightness: -10%);
+    border-color: color.adjust($primary, $lightness: -10%);
+    transform: translateY(-1px);
+  }
+
+  // Focus states
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+
+  // Disabled state
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

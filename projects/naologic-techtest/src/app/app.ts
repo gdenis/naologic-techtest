@@ -1,6 +1,7 @@
+
 import { Component, inject, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NaologicDs, WorkCenterDocument, WorkOrderStatus } from 'naologic-ds';
+import { TimelineActionButton, WorkCenterDocument, WorkOrderStatus } from 'naologic-ds';
 import { JsonPipe } from '@angular/common';
 import { WorkCenterService } from './services/work-center/work-center.service';
 import { WorkOrderService } from './services/work-order/work-order.service';
@@ -10,7 +11,7 @@ import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NaologicDs, JsonPipe],
+  imports: [RouterOutlet, JsonPipe, TimelineActionButton],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
